@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+<title>MES MSPS AI Admin Dashboard</title>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo-name">
+<div class="logo-image">
+<img src="images/logo.png">
+</div>
+<span class="logo_name">MES MSPS AI</span>
+</div>
+
+<div class="menu-items">
+
+<ul class="nav-links">
+
+<li>
+<a href="#" id="dashboardBtn">
+<i class="uil uil-estate"></i>
+<span class="link-name">Dashboard</span>
+</a>
+</li>
+
+<li>
+<a href="#" id="uploadBtn">
+<i class="uil uil-upload"></i>
+<span class="link-name">Upload Document</span>
+</a>
+</li>
+
+<li>
+<a href="#" id="deleteBtn">
+<i class="uil uil-trash"></i>
+<span class="link-name">Delete Existing Document</span>
+</a>
+</li>
+
+</ul>
+
+<ul class="logout-mode">
+
+<li>
+<a href="index.html">
+<i class="uil uil-signout"></i>
+<span class="link-name">Logout</span>
+</a>
+</li>
+
+<li class="mode">
+<a href="#">
+<i class="uil uil-moon"></i>
+<span class="link-name">Dark Mode</span>
+</a>
+
+<div class="mode-toggle">
+<span class="switch"></span>
+</div>
+
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<section class="dashboard">
+
+<div class="top">
+
+<i class="uil uil-bars sidebar-toggle"></i>
+
+<div class="search-box">
+<i class="uil uil-search"></i>
+<input type="text" id="searchInput" placeholder="Search document..." onkeyup="searchFiles()">
+</div>
+
+</div>
+
+<div class="dash-content">
+
+<!-- DASHBOARD -->
+<div id="dashboardSection">
+
+<div class="title">
+<i class="uil uil-tachometer-fast-alt"></i>
+<span class="text">Dashboard</span>
+</div>
+
+<p style="margin-top:20px;font-size:18px">
+Welcome to <b>MES MSPS AI Admin Panel</b>.  
+Upload and manage documents for the AI assistant.
+</p>
+
+</div>
+
+
+<!-- UPLOAD -->
+<div id="uploadSection" style="display:none">
+
+<div class="title">
+<i class="uil uil-upload"></i>
+<span class="text">Upload Document</span>
+</div>
+
+<input type="file" id="fileInput" multiple>
+<br><br>
+
+<button onclick="uploadFiles()">Upload Files</button>
+
+<p id="uploadStatus"></p>
+
+</div>
+
+
+<!-- DELETE FILES -->
+<div id="deleteSection" style="display:none">
+
+<div class="title">
+<i class="uil uil-trash"></i>
+<span class="text">Delete Documents</span>
+</div>
+ <!--File list table-->
+<table id="fileTable" border="1" style="width:100%; margin-top:20px;">
+<thead>
+<tr>
+<th>Document Name</th>
+<th>Size</th>
+<th>Upload Date</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="fileList">
+</tbody>
+
+</table>
+
+</div>
+
+
+</div>
+
+</section>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html> 
