@@ -1,143 +1,106 @@
-# 💰 Auto Expense Leakage Detector
+🎓 AI Campus Assistant (RAG-Based)
+📌 Overview
+AI Campus Assistant is a web-based application developed to simplify access to academic information within educational institutions. The system helps students and administrative staff by providing a centralized platform to retrieve, understand, and manage university-related documents efficiently, replacing time-consuming manual communication methods.
 
-## 📌 About the Project
+The application uses Retrieval-Augmented Generation (RAG) technology to generate accurate and context-aware responses from uploaded academic documents such as:
 
-The **Auto Expense Leakage Detector** is a Python-based web application designed to help users track expenses, monitor spending patterns, and identify unnecessary or abnormal expenses.
+Fee Structures
+Syllabi
+Admission Guidelines
+Examination Rules
+Academic Notices
+The platform supports multilingual interaction, conversational memory, voice-based queries, and secure document management for administrators.
 
-The application allows users to add expenses manually or upload bill images. It uses OCR (Optical Character Recognition) to extract text from uploaded bills and automatically identifies expense categories.
+🚀 Features
+📄 Document-Based Question Answering
+🔍 Semantic Search using Vector Database
+🌐 Multilingual Response Generation
+🎤 Voice-to-Query Support
+💬 Conversational Chat Memory
+🔐 Secure Admin Document Management
+⚡ Fast and Accurate Information Retrieval
+🤖 AI-Powered Response Generation
+🛠️ Technologies Used
+Backend
+Python 3.10+
+LangChain
+FAISS / ChromaDB
+PyPDF2
+SpeechRecognition Library
+Google Gemini API / Mistral AI
+Frontend
+HTML
+CSS
+JavaScript
+🧩 System Architecture
+The system consists of multiple modules working together to provide intelligent academic assistance.
 
-## ✨ Features
+Modules
+1. Admin Dashboard & Document Management Module
+Upload and manage academic documents
+Maintain centralized document storage
+Secure access for administrators
+2. Document Loader Module
+Extracts text from uploaded PDF and academic documents using PyPDF2
+3. Vector Database Module
+Converts extracted text into embeddings
+Stores embeddings using FAISS / ChromaDB for semantic search
+4. Query Processing Module
+Receives and processes user questions
+5. Retrieval Module
+Finds the most relevant document sections related to user queries
+6. LLM Integration Module
+Generates intelligent responses using AI models such as Gemini or Mistral AI
+7. Multilingual Translation Module
+Supports communication in multiple languages
+8. Chat History Memory Module
+Maintains conversational context for better interaction
+9. Voice-to-Query Module
+Converts voice input into text queries using SpeechRecognition
+10. Student Dashboard Module
+Provides students with easy access to academic information and chatbot interaction
+📷 System Interface
+Student Dashboard and Documents Module
+Student Dashboard
 
-- **User Login:** Login-based access to the application.
-- **Manual Expense Entry:** Add expenses with date, category, and amount.
-- **Bill Image Upload:** Upload bill images for expense processing.
-- **OCR Integration:** Extract text from uploaded bills using Tesseract OCR.
-- **Automatic Categorization:** Categorize expenses based on extracted keywords.
-- **Expense Dashboard:** View total expenses, monthly limits, and savings.
-- **Expense Alerts:** Get alerts when spending exceeds category or monthly limits.
-- **Data Visualization:** View category-wise and monthly expense charts.
-- **Database Management:** Store expense records using SQLite.
+⚙️ Workflow
+Admin uploads academic documents
+Documents are processed and converted into embeddings
+Embeddings are stored in the vector database
+User submits a text or voice query
+Retrieval module searches relevant document chunks
+AI model generates accurate context-aware responses
+Response is displayed to the user through the web interface
+🎯 Advantages
+Reduces manual communication effort
+Provides instant academic information access
+Improves student support services
+Enables context-aware AI responses
+Supports multilingual and voice interactions
+Enhances campus communication efficiency
+📌 Future Enhancements
+Mobile application integration
+Real-time campus notifications
+Student authentication system
+Advanced analytics dashboard
+OCR support for scanned documents
+Integration with college ERP systems
+✅ Conclusion
+The AI Campus Assistant (RAG-Based) provides an intelligent and efficient solution for improving access to academic information within educational institutions. By combining Retrieval-Augmented Generation (RAG) technology with artificial intelligence, the system enables students to obtain accurate, context-based responses from official campus documents in a fast and reliable manner.
 
-## 🛠️ Technologies Used
+The application overcomes the limitations of traditional information retrieval methods by reducing manual searching, improving accessibility, and delivering instant responses to user queries.
 
-- **Backend:** Python, Flask
-- **Frontend:** HTML5, CSS3, JavaScript
-- **Database:** SQLite
-- **OCR:** Tesseract OCR, Pytesseract
-- **Image Processing:** Pillow
-- **Data Visualization:** Matplotlib
+With features such as:
 
-## 📂 Project Structure
+Document-based question answering
+Semantic search
+Multilingual interaction
+Voice-based query handling
+Conversational memory
+the system becomes highly interactive, scalable, and user-friendly.
 
-```text
-Final_Year_Project/
-│
-└── folder of project/
-    │
-    ├── app.py
-    ├── model.py
-    ├── database.py
-    ├── database.db
-    ├── expenses.db
-    ├── requirements.txt
-    │
-    ├── templates/
-    │   ├── dashboard.html
-    │   ├── index.html
-    │   └── login.html
-    │
-    └── static/
-        ├── style.css
-        ├── script.js
-        ├── uploads/
-        └── charts/
-```
+The centralized document management system enables administrators to maintain academic records efficiently, while the vector database and retrieval modules ensure accurate and relevant response generation.
 
-## ⚙️ Installation and Setup
+Overall, the project enhances communication between students and institutions by providing quick and intelligent access to information related to admissions, syllabus, fees, examinations, and campus activities and also works an e-librabry.
 
-### 1. Clone the Repository
-
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-### 2. Open the Project Folder
-
-```bash
-cd Final_Year_Project
-cd "folder of project"
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-The application also imports Pytesseract and Pillow, which should be installed if they are not already available:
-
-```bash
-pip install pytesseract Pillow
-```
-
-### 4. Install Tesseract OCR
-
-Install Tesseract OCR on your system and configure its executable path in `app.py`.
-
-The current code uses a Windows installation path. Update it if Tesseract is installed elsewhere or if you use another operating system.
-
-### 5. Initialize the Database
-
-Run:
-
-```bash
-python database.py
-```
-
-### 6. Run the Application
-
-```bash
-python app.py
-```
-
-### 7. Open in Browser
-
-```text
-http://127.0.0.1:5000
-```
-
-## 📊 Application Modules
-
-| Module | Description |
-|---|---|
-| Login | Provides login-based access |
-| Expense Entry | Adds expenses manually |
-| Bill Upload | Uploads bill images |
-| OCR Processing | Extracts text from bills |
-| Category Detection | Identifies expense categories |
-| Dashboard | Displays expense summaries |
-| Charts | Visualizes expense data |
-| Alerts | Monitors spending limits |
-
-## 🎯 Project Objective
-
-The main objective of this project is to simplify personal expense tracking, improve spending awareness, and help users manage their finances through automated bill processing and visual expense analysis.
-
-## 🚀 Future Enhancements
-
-- Machine Learning-based expense classification.
-- Improved OCR accuracy and amount extraction.
-- Monthly and yearly financial reports.
-- User registration and personalized accounts.
-- Export expense reports as PDF or Excel.
-
-## 👨‍💻 Author
-
-**Sweedal Dsouza**
-
-- GitHub: https://github.com/Sweedal313
-- Portfolio: https://sweedals-portfolio.netlify.app/
-
----
-
-⭐ If you find this project useful, consider giving the repository a star!
+👨‍💻 Author
